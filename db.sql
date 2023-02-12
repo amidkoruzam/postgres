@@ -14,8 +14,8 @@ CREATE TABLE artists (
 
 CREATE TABLE artists_songs (
     id SERIAL PRIMARY KEY,
-    song_id int REFERENCES songs,
-    artist_id int REFERENCES artists
+    song_id int REFERENCES songs ON DELETE CASCADE,
+    artist_id int REFERENCES artists ON DELETE RESTRICT
 );
 
 INSERT INTO songs (title) VALUES ('Song #1');
